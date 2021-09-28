@@ -1,0 +1,411 @@
+body {
+    background: #ffffff;
+}
+
+// Navbar
+nav {
+    .navbar-nav {
+        padding-left: 80px;
+        padding-top: 10px;
+    }
+    .nav-link {
+        color: rgb(116, 114, 114) !important;
+        font-weight: 600;
+        &:hover {
+            color: #000 !important;
+            margin: auto;
+            margin-bottom: -2px;
+        }
+    }
+    .nav-item {
+        padding-right: 15px;
+    }
+    .btn-login {
+        background-color: #ff4444;
+        color: #fff;
+
+        &:hover {
+            background-color: #f52839;
+            color: #fff;
+        }
+    }
+    .fa-shopping-bag {
+        color: #ecad0d;
+        font-size: 30px;
+    }
+
+    .input-group {
+        .fa-search {
+            color: #fff;
+        }
+        margin-right: 30px;
+    }
+
+    .btn-search {
+        background-color: #ff4444;
+        color: #fff;
+        &:hover {
+            background-color: #f52839;
+            color: #fff;
+        }
+    }
+}
+//header
+header {
+    padding: 180px 0 200px;
+    margin-top: 10px;
+    background-image: url("../image/banner.png");
+    background-size: cover;
+
+    p,
+    h1,
+    h3 {
+        color: #ffff;
+    }
+    p {
+        font-size: 15px;
+    }
+    h3 {
+        font-size: 18px;
+    }
+    h1 {
+        font-size: 50px;
+    }
+
+    .btn-shop-now {
+        background-color: #ff4444;
+        color: #fff;
+        &:hover {
+            background-color: #f52839;
+            color: #fff;
+        }
+    }
+}
+//Related Product
+.section-related {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 40px;
+    .desc-barang {
+        text-align: center;
+        .desc-barang {
+            color: #f52839;
+        }
+    }
+}
+
+//Card Barang
+.section-related-content {
+    padding-top: 50px;
+    .section-related-barang {
+        .card-barang {
+            min-height: 300px;
+            background-color: rgb(0, 0, 0);
+            color: #fff;
+            padding: 10px;
+            background-size: cover;
+            margin-bottom: 40px;
+        }
+        .barang-button {
+            .btn-barang-details {
+                background-color: #ff4444;
+                color: #fff;
+                &:hover {
+                    background-color: #f52839;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+.section-best {
+    margin-top: 70px;
+    margin-bottom: 70px;
+    .section-best-product {
+        .card-best-product {
+            border: 0;
+            img {
+                width: 85%;
+            }
+        }
+    }
+    .best-product-detail {
+        .best-product-title {
+            span {
+                color: #8a8a8a;
+            }
+            h3 {
+                font-size: 35px;
+            }
+        }
+        .best-product-desc {
+            font-weight: 400;
+        }
+    }
+    .btn-barang-details {
+        background-color: #ff4444;
+        color: #fff;
+        &:hover {
+            background-color: #f52839;
+            color: #fff;
+        }
+    }
+}
+
+//Instagram
+
+.photo-instagram {
+    overflow: hidden;
+    .instagram-item {
+        float: left;
+        width: 25%;
+        height: 320px;
+        text-align: center;
+        position: relative;
+        &:hover:before {
+            opacity: 1;
+        }
+        &:hover {
+            .inside-text {
+                opacity: 1;
+                visibility: visible;
+                z-index: 99;
+            }
+        }
+        &:before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            content: "";
+            opacity: 0;
+            -webkit-transition: all 0.3s;
+            -webkit-transition: 0.3s;
+            -o-transition: 0.3s;
+            transition: 0.3s;
+        }
+        .inside-text {
+            padding-top: 130px;
+            opacity: 0;
+            visibility: hidden;
+            position: relative;
+            -webkit-transition: all 0.3s;
+            -webkit-transition: 0.3s;
+            -o-transition: 0.3s;
+            transition: 0.3s;
+        }
+    }
+}
+
+//Breadcrumb Detail Barang
+.section-details-header {
+    min-height: 150vh;
+}
+.section-details-barang {
+    .breadcrumb {
+        background-color: transparent;
+        margin-top: 10px;
+    }
+    .breadcrumb-item {
+        color: #666464;
+        &.active {
+            color: #000;
+        }
+    }
+    .card-details {
+        margin-bottom: 50px;
+        border: 0;
+        .gallery {
+            .xzoom-container {
+                display: block;
+
+                .xzoom {
+                    width: 100%;
+                    box-shadow: none;
+                    margin-bottom: 10px;
+                }
+
+                .xactive {
+                    border: 4px solid #000;
+                    box-shadow: none;
+                }
+            }
+            .xzoom-thumbs {
+                img {
+                    width: 31%;
+                }
+            }
+        }
+    }
+    .product-detail {
+        .product-title {
+            span {
+                color: #8a8a8a;
+            }
+            h3 {
+                color: #000;
+            }
+        }
+        .product-desc {
+            padding-top: 5px;
+
+            h4 {
+                color: #f52839;
+            }
+        }
+        .btn-add-to-cart {
+            background-color: #ff4444;
+            color: #fff;
+            &:hover {
+                background-color: #f52839;
+                color: #fff;
+            }
+        }
+    }
+    .card-checkout {
+        padding: 20px;
+        border-radius: 5px;
+    }
+
+    .information {
+        tr {
+            th {
+                color: #272626;
+                font-weight: 500;
+                padding-bottom: 15px;
+            }
+        }
+    }
+
+    .card-right {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom: 0;
+    }
+
+    .join-container {
+        margin-top: -20px;
+
+        .btn-payment {
+            background-color: #ff4444;
+            color: #fff;
+            &:hover {
+                background-color: #f52839;
+                color: #fff;
+            }
+        }
+    }
+
+    .informasi {
+        font-family: "Righteous", cursive;
+        .user-info {
+            padding-top: 20px;
+
+            .form-group {
+                padding: 3px;
+                font-weight: 500;
+                margin-top: 10px;
+                font-family: "Righteous", cursive;
+            }
+        }
+    }
+
+    .btn-simpan {
+        background-color: #ff4444;
+        color: #fff;
+        &:hover {
+            background-color: #f52839;
+            color: #fff;
+        }
+    }
+}
+
+//Network
+.section-networks {
+    background-color: #272626;
+    padding-top: 40px;
+    padding-bottom: 30px;
+
+    img {
+        max-width: 100%;
+    }
+}
+
+//Footer
+.section-footer {
+    background-color: rgb(29, 29, 29);
+    color: rgb(179, 178, 178);
+    font-family: "Righteous", cursive;
+
+    h5 {
+        margin-top: 20px;
+    }
+    ul {
+        margin-top: 20px;
+        li {
+            a {
+                color: rgb(179, 178, 178);
+            }
+        }
+    }
+}
+
+//Succes Checkout
+.section-success {
+    img {
+        padding-top: 80px;
+        width: 20%;
+    }
+    h1 {
+        padding-top: 30px;
+        font-size: 40px;
+        font-weight: 600;
+    }
+    p {
+        font-size: 15px;
+        padding-bottom: 5px;
+    }
+    .btn-back-to-home {
+        background-color: #ff4444;
+        color: #fff;
+        &:hover {
+            background-color: #f52839;
+            color: #fff;
+        }
+    }
+}
+
+//Form Login
+.login {
+    @media (min-width: 992px) {
+        background-image: url(../image/login.png);
+        background-repeat: no-repeat;
+        background-position: right;
+
+        width: 100vw;
+        height: 100vh;
+    }
+    .page-login {
+        height: 100vh;
+    }
+    .card {
+        border: 0;
+        margin-top: 80px;
+        font-family: "Righteous", cursive;
+        color: #000;
+        .form-group {
+            font-size: 20px;
+            padding-top: 8px;
+        }
+    }
+    a {
+        color: rgb(75, 75, 75);
+
+        &:hover {
+            color: #000;
+        }
+    }
+}
