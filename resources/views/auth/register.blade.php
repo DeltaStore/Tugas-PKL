@@ -62,8 +62,8 @@
                                     <input id="password-confirm" placeholder="Confirmasi Password.." type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                                 </div>
                             </div>
-    
-                            <button type="submit"class="btn btn-danger btn-block mt-4">Sign up</button>
+                                
+                            <button type="submit"class="btn btn-login btn-block mt-4">Sign up</button>
                         </form>
                     </div>
                 </div>

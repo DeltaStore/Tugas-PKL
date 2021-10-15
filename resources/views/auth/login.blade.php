@@ -51,7 +51,7 @@
                         </div>
                         <button
                             type="submit"
-                            class="btn btn-danger btn-block mt-4"
+                            class="btn btn-login btn-block mt-4"
                         >
                             Sign in
                         </button>

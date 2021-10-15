@@ -51,11 +51,11 @@ aria-hidden="true">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
-        <div class="modal-body">Klik "Logout" Untuk Keluar dari Dashboard</div>
+        <div class="modal-body">Klik "Logout" Untuk Keluar</div>
         <div class="modal-footer">
             <form action="{{url('/')}}">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <button class="btn btn-primary" type="submit">Logout</button>
+            <button class="btn btn-danger" type="submit">Logout</button>
             </form>
             @csrf
         </div>

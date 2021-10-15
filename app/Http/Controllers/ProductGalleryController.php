@@ -25,7 +25,7 @@ class ProductGalleryController extends Controller
     {
         $items = ProductGallery::with('product')->get();
 
-        return view('pages.product-galleries.index')->with([
+        return view('pages.product_galleries.index')->with([
             'items' => $items
         ]);
     }
@@ -39,7 +39,7 @@ class ProductGalleryController extends Controller
     {
         $product = Product::all();
 
-        return view('pages.product-galleries.create')->with([
+        return view('pages.product_galleries.create')->with([
             'products' => $product
         ]);
     }
@@ -58,7 +58,7 @@ class ProductGalleryController extends Controller
         );
 
         ProductGallery::create($data);
-        return redirect()->route('product-galleries.index');
+        return redirect()->route('product_galleries.index');
     }
 
     /**
@@ -106,7 +106,7 @@ class ProductGalleryController extends Controller
         $item = ProductGallery::findorFail($id);
         $item->delete();
 
-        return redirect()->route('product-galleries.index');
+        return redirect()->route('product_galleries.index');
     }
 
     

@@ -34,7 +34,7 @@
           <div class="container">
             <div class="section-related-barang row justify-content-center">
               @foreach ($items as $item)
-              <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="col-7 col-sm-6 col-md-4 col-lg-3">
                 <div class="card-barang text-center d-flex flex-column" 
                 style="background-image: url('{{ $item->product_galleries->count() ? url($item->product_galleries->first()->photo) : ''}}');">
                 
@@ -66,10 +66,10 @@
         <section class="section-related-content">
           <div class="container">
             <div class="section-related-barang row justify-content-center">
-              <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="col-7 col-sm-6 col-md-4 col-lg-3">
                 <div class="card-barang text-center d-flex flex-column" style="background-image: url('/frontend/image/Mikey.jpg')">
                   <div class="barang-button mt-auto">
-                    <a href="detail" class="btn btn-barang-details px-4"> View Details </a>
+                    <a href="#" class="btn btn-barang-details px-4"> View Details </a>
                   </div>
                 </div>
                 <div class="desc-barang text-center mt-3">
@@ -78,10 +78,10 @@
                   <div class="desc-barang">$10,00</div>
                 </div>
               </div>
-              <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="col-7 col-sm-6 col-md-4 col-lg-3">
                 <div class="card-barang text-center d-flex flex-column" style="background-image: url('/frontend/image/Mikey.jpg')">
                   <div class="barang-button mt-auto">
-                    <a href="detail" class="btn btn-barang-details px-4"> View Details </a>
+                    <a href="#" class="btn btn-barang-details px-4"> View Details </a>
                   </div>
                 </div>
                 <div class="desc-barang text-center mt-3">
@@ -90,11 +90,11 @@
                   <div class="desc-barang">$10,00</div>
                 </div>
               </div>
-              <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="col-7 col-sm-6 col-md-4 col-lg-3">
                 <div class="card-barang text-center d-flex flex-column"
                 style="background-image: url('/frontend/image/Mikey.jpg')">
                   <div class="barang-button mt-auto">
-                    <a href="detail" class="btn btn-barang-details px-4"> View Details </a>
+                    <a href="#" class="btn btn-barang-details px-4"> View Details </a>
                   </div>
                 </div>
                 <div class="desc-barang text-center mt-3">
@@ -103,10 +103,10 @@
                   <div class="desc-barang">$10,00</div>
                 </div>
               </div>
-              <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="col-7 col-sm-6 col-md-4 col-lg-3">
                 <div class="card-barang text-center d-flex flex-column" style="background-image: url('/frontend/image/Mikey.jpg')">
                   <div class="barang-button mt-auto">
-                    <a href="detail" class="btn btn-barang-details px-4"> View Details </a>
+                    <a href="#" class="btn btn-barang-details px-4"> View Details </a>
                   </div>
                 </div>
                 <div class="desc-barang text-center mt-3">
@@ -121,45 +121,14 @@
       </section>
 
       <!--Section Instagram-->
-      <section class="photo-instagram">
-      <div class="">
-        <div class="">
-          <div class="instagram-item set-bg">
-            <img src="frontend/image/Men1.png" alt="" />
-            <div class="inside-text">
-              <i class="fa fa-instagram"></i>
-              <h5><a href="">Delta_Gallery</a></h5>
+      <section class="section-instagram">
+        <div class="instagram mb-5">
+          <div class="">
+            <div class=" text-center">
+              <img src="{{url('frontend/image/instagram.png')}}" alt=""/>
             </div>
           </div>
         </div>
-       <div class="">
-        <div class="instagram-item set-bg">
-          <img src="frontend/image/Women1.png" alt="" />
-          <div class="inside-text">
-            <i class="fa fa-instagram"></i>
-            <h5><a href="">Delta_Gallery</a></h5>
-          </div>
-        </div>
-       </div>
-        <div class="">
-          <div class="instagram-item set-bg">
-            <img src="frontend/image/men2.png" alt="" />
-            <div class="inside-text">
-              <i class="fa fa-instagram"></i>
-              <h5><a href="">Delta_Gallery</a></h5>
-            </div>
-          </div>
-        </div>
-         <div class="">
-          <div class="instagram-item set-bg">
-            <img src="frontend/image/women2.png" alt="" />
-            <div class="inside-text">
-              <i class="fa fa-instagram"></i>
-              <h5><a href="">Delta_Gallery</a></h5>
-            </div>
-          </div>
-         </div>
-      </div>
       </section>
 
 
@@ -168,11 +137,28 @@
       <section class="section-networks">
         <div class="container">
           <div class="row">
-            <div class="col md-8 text-center">
-              <img src="frontend/image/Branded.png" alt="" />
+            <div class="col md-10 text-center">
+              <img src="{{url('frontend/image/Brands.png')}}" alt="" style="width: 60rem"/>
             </div>
           </div>
         </div>
       </section>
     </main>
 @endsection
+
+@push('addon-script')
+    <script src="{{url('frontend/script/main.js')}}"></script>
+
+       <script>
+        $(document).ready(function(){
+        if (window.scroll > $(".section-related-content").offset().top - 250) {
+        $(".section-related-content .card-barang").each(function (i) {
+        setTimeout(function () {
+            $(".section-related-content .card-barang").eq(i).addClass("muncul");
+        }, 300 * (i + 1));
+        });
+          }
+        });
+    </script>
+@endpush
+

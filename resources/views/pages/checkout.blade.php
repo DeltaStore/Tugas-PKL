@@ -15,7 +15,8 @@
               <div class="col p-0">
                 <nav>
                   <ol class="breadcrumb">
-                    <li class="breadcrumb-item">Home Page</li>
+                    
+                    <li class="breadcrumb-item"><i class="fas fa-home"></i> Home Page</li >
                     <li class="breadcrumb-item active">Checkout</li>
                   </ol>
                 </nav>
@@ -28,9 +29,9 @@
                     <table class="table table-responsive-sm text-center">
                       <thead>
                         <tr>
-                          <td>Image</td>
-                          <td>Product Name</td>
-                          <td>Price</td>
+                          <td>Gambar</td>
+                          <td>Nama Product</td>
+                          <td>Harga</td>
                           <td>Action</td>
                         </tr>
                       </thead>
@@ -44,7 +45,7 @@
                         <td class="align-middle">{{$detail->product->price}}</td>
                         <td class="align-middle">
                           <a href="{{route('checkout-remove',$detail->id)}}">
-                            <img src="frontend/image/cross.png" alt="" />
+                            <img src="{{url('frontend/image/cross.png')}}" alt="" />
                           </a>
                         </td>
                       </tr>
@@ -61,7 +62,7 @@
                 </div>
               </div>
               <div class="col-lg-4">
-                <div class="card card-checkout card-right mt-4">
+                <div class="card card-checkout card-right mt-4 ">
                   <table class="information">
                     <tr>
                       <th width="50%">ID Transaction</th>
@@ -69,34 +70,38 @@
                     </tr>
                     <tr>
                       <th width="50%">Sub Total</th>
-                      <td width="50%" class="text-right">{{$item->transaction_total}}</td>
+                      <td width="50%" class="text-right">Rp {{$item->transaction_total}}</td>
                     </tr>
                     <tr>
-                      <th width="50%">Pajak</th>
-                      <td width="50%" class="text-right">5%</td>
+                      <th width="50%">Biaya Penaganan</th>
+                      <td width="50%" class="text-right text-uniq-black">Unique <span class="text-uniq-red">Code+</span>
+                      </td>
                     </tr>
                     <tr>
                       <th width="50%">Total Biaya</th>
-                      <td width="50%" class="text-right">{{$item->transaction_total}}</td>
+                      <td width="50%" class="text-right">
+                        <span class="text-red">Rp {{$item->transaction_total+=mt_rand(0,4000)}}
+                      </span>
+                      </td>
                     </tr>
                     <tr>
                       <th width="50%">Bank Transfer</th>
-                      <td width="50%" class="text-right">Gopay , Ovo , Dana</td>
+                      <td width="50%" class="text-right bank">Mandiri</td>
                     </tr>
                     <tr>
                       <th width="50%">No Rekening</th>
-                      <td width="50%" class="text-right">082329547489</td>
+                      <td width="50%" class="text-right nomor">082329<span class="next">547489</span></td>
                     </tr>
                     <tr>
                       <th width="50%">Nama Penerima</th>
-                      <td width="50%" class="text-right">Yoko Surya Wiguna</td>
+                      <td width="50%" class="text-right delta">Delta <span class="store">Store</span></td>
                     </tr>
                   </table>
                 </div>
                 <div class="join-container">
                   <a href="{{route('checkout-success',$item->id)}}" class="btn btn-block btn-payment mt-4 py-2" type="submit"> I Already Pay </a>
                 </div>
-               
+
               </div>
               <div class="informasi col-lg-6 mt-5">
                 <h4>Informasi Pembeli</h4>
@@ -126,7 +131,7 @@
                     </div>
                     <div class="form-group">
                       <label for="adress">Alamat Lengkap</label>
-                      <textarea class="form-control" name="adress" @error('adress') is-invalid @enderror id="adress" rows="5"  placeholder="Masukan Alamat Rumah Anda..."></textarea>
+                      <textarea class="form-control" name="adress" @error('adress') is-invalid @enderror id="adress" rows="5" placeholder="Masukan Alamat Rumah Anda...">{{old('adress')}}</textarea>
                       @error('adress')
                       <div class="alert alert-danger">{{ $message }}</div>
                       @enderror

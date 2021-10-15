@@ -4,14 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use App\User;
 
 class Transaction extends Model
 {
     use SoftDeletes;
 
     protected $fillable = [
-        'uid','name','users_id','email','phone','adress',
+        'uid','products_id','name','email','phone','adress',
         'transaction_total','transaction_status'
     ];
 
@@ -28,9 +27,8 @@ class Transaction extends Model
     {
         return $this->belongsTo(Product::class,'products_id','id');
     }
+    
 
-    public function user(){
-        return $this->belongsTo(User::class,'users_id','id');
-    }
+
 
 }

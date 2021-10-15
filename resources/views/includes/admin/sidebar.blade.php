@@ -2,8 +2,8 @@
   <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('dashboard')}}">
-        <img src="frontend/image/Delta Store.png" alt="" style="width: 170px">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center sidebar-heading" href="{{route('dashboard')}}">
+        <img src="{{url('frontend/image/Delta Store.png')}}" alt="" style="width: 170px">
     </a>
 
     <!-- Divider -->
@@ -50,13 +50,13 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item ">
-        <a class="nav-link" href="{{route('product-galleries.index')}}">
+        <a class="nav-link" href="{{route('product_galleries.index')}}">
             <i class="fas fa-bars"></i>
             <span>Lihat Photo Barang</span></a>
     </li>
 
     <li class="nav-item ">
-        <a class="nav-link" href="{{route('product-galleries.create')}}">
+        <a class="nav-link" href="{{route('product_galleries.create')}}">
             <i class="fas fa-plus"></i>
             <span>Tambah Foto Barang</span></a>
     </li>
@@ -72,8 +72,9 @@
     <li class="nav-item ">
         <a class="nav-link" href="{{route('transactions.index')}}">
             <i class="fas fa-bars"></i>
-            <span>Lihat Transaksi</span></a>
+            <span>Lihat Transaksi Product</span></a>
     </li>
+
 
 
   

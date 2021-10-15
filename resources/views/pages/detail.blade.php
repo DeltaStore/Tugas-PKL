@@ -13,7 +13,7 @@
               <div class="col p-0">
                 <nav>
                   <ol class="breadcrumb">
-                    <li class="breadcrumb-item">Home Page</li>
+                    <li class="breadcrumb-item"><i class="fas fa-home"></i> Home Page</li >
                     <li class="breadcrumb-item active">Detail</li>
                   </ol>
                 </nav>
@@ -80,10 +80,10 @@
               <section class="section-related-content">
                 <div class="container">
                   <div class="section-related-barang row justify-content-center">
-                    <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="col-7 col-sm-6 col-md-4 col-lg-3">
                       <div class="card-barang text-center d-flex flex-column" style="background-image: url('/frontend/image/Mikey.jpg')">
                         <div class="barang-button mt-auto">
-                          <a href="detail" class="btn btn-barang-details px-4"> View Details </a>
+                          <a href="#" class="btn btn-barang-details px-4"> View Details </a>
                         </div>
                       </div>
                       <div class="desc-barang text-center mt-3">
@@ -92,10 +92,10 @@
                         <div class="desc-barang">$10,00</div>
                       </div>
                     </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="col-7 col-sm-6 col-md-4 col-lg-3">
                       <div class="card-barang text-center d-flex flex-column" style="background-image: url('/frontend/image/Mikey.jpg')">
                         <div class="barang-button mt-auto">
-                          <a href="detail" class="btn btn-barang-details px-4"> View Details </a>
+                          <a href="#" class="btn btn-barang-details px-4"> View Details </a>
                         </div>
                       </div>
                       <div class="desc-barang text-center mt-3">
@@ -104,11 +104,11 @@
                         <div class="desc-barang">$10,00</div>
                       </div>
                     </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="col-7 col-sm-6 col-md-4 col-lg-3">
                       <div class="card-barang text-center d-flex flex-column"
                       style="background-image: url('/frontend/image/Mikey.jpg')">
                         <div class="barang-button mt-auto">
-                          <a href="detail" class="btn btn-barang-details px-4"> View Details </a>
+                          <a href="#" class="btn btn-barang-details px-4"> View Details </a>
                         </div>
                       </div>
                       <div class="desc-barang text-center mt-3">
@@ -117,10 +117,10 @@
                         <div class="desc-barang">$10,00</div>
                       </div>
                     </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="col-7 col-sm-6 col-md-4 col-lg-3">
                       <div class="card-barang text-center d-flex flex-column" style="background-image: url('/frontend/image/Mikey.jpg')">
                         <div class="barang-button mt-auto">
-                          <a href="detail" class="btn btn-barang-details px-4"> View Details </a>
+                          <a href="#" class="btn btn-barang-details px-4"> View Details </a>
                         </div>
                       </div>
                       <div class="desc-barang text-center mt-3">
@@ -146,6 +146,8 @@
 
 @push('addon-script')
      <script src="{{url('frontend/libraries/xzoom/xzoom.min.js')}}"></script>
+     <script src="{{url('frontend/script/bootstrap.js')}}"></script>
+     <script src="{{url('frontend/script/jquery-migrate-1.4.1.min.js')}}"></script>
 
     <script>
       $(document).ready(function () {

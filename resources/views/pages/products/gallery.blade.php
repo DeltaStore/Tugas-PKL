@@ -27,11 +27,11 @@
                                         <td>{{$item->id}}</td>
                                         <td>{{$item->product->name}}</td>
                                         <td>
-                                            <img src="{{url($item->photo)}}" alt="">
+                                            <img src="{{url($item->photo)}}" alt="" style="width:300px" class="img-thumbnail">
                                         </td>
                                         <td>
                                          
-                                            <form action="{{route('product-galleries.destroy', $item->id)}}" method="POST" class="d-inline">
+                                            <form action="{{route('product_galleries.destroy', $item->id)}}" method="POST" class="d-inline">
                                                 @csrf
                                                 @method('delete')
                                                 <button class="btn btn-danger btn-sm">

@@ -12,19 +12,20 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/','HomeController@index')
     ->name('home');
 
 Route::get('/detail/{slug}','DetailController@index')
     ->name('detail');
 
+Route::get('/about','AboutController@index')
+    ->name('about');
 
-Route::post('/checkout{id}','CheckoutController@process')
+Route::post('/checkout/{id}','CheckoutController@process')
     ->name('checkout_process')
     ->middleware(['auth','verified']);
 
-Route::get('/checkout{id}','CheckoutController@index')
+Route::get('/checkout/{id}','CheckoutController@index')
     ->name('checkout')
     ->middleware(['auth','verified']);
 
@@ -45,19 +46,23 @@ Route::prefix('admin')
     ->namespace('Admin')
     ->group(function(){
         Route::get('/','DashboardController@index')
-            ->name('dashboard');
+            ->name('dashboard')
+            ->middleware(['auth','verified']);
     });
 Auth::routes(['verify'=>true]);
-
 
 Route::get('products/{id}/gallery','ProductController@gallery')
     ->name('products.gallery');
 
 Route::resource('products', 'ProductController');
-Route::resource('product-galleries', 'ProductGalleryController');
+
+Route::resource('product_galleries', 'ProductGalleryController');
 
 
 Route::get('transactions/{id}/set-status','TransactionController@setStatus')
     ->name('transactions.status');
+
 Route::resource('transactions', 'TransactionController');
+
+
 

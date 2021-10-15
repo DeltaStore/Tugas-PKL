@@ -7,7 +7,7 @@
     <main>
       <div class="section-success d-flex align-items-center">
         <div class="col text-center">
-          <img src="{{url('frontend/image/success.png')}}" alt="" />
+          <img src="{{url('frontend/image/cart-success.png')}}" alt="" />
           <h1>Suksess Terbayar</h1>
           <p>
             Silahkan Tunggu update dari via email

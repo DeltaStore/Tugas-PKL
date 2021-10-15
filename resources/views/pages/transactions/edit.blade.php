@@ -4,7 +4,7 @@
     <div class="card">
         <div class="card-header">
             <strong>Ubah Transaksi</strong>
-            <small>{{$item->uid}}</small>
+            <small>{{$item->products_id}}</small>
         </div>
         <div class="card-body card block">
             <form action="{{route('transactions.update', $item->id)}}" method="POST">

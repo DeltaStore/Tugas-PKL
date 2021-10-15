@@ -107,8 +107,8 @@
                         <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;">
                           <tbody>
                             <tr>
-                              <td style="width:150px;">
-                                <img alt="" height="auto" src="image/Logo email.png" style="border:none;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;" width="150" />
+                              <td style="width:170px;">
+                                <img alt="" height="auto" src="{{url('frontend/image/Logo Email.png')}}" style="border:none;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;" width="170" />
                               </td>
                             </tr>
                           </tbody>
@@ -136,7 +136,7 @@
                   <tbody>
                     <tr>
                       <td align="center" style="font-size:0px;padding:10px 25px;padding-top:30px;padding-right:25px;padding-bottom:30px;padding-left:25px;word-break:break-word;">
-                        <div style="font-family:Playfair Display,Times New Roman, serif;font-size:30px;font-weight:bold;line-height:1;text-align:center;color:#000000;">Bukti Pembayaran Anda!!</div>
+                        <div style="font-family:Playfair Display,Times New Roman, serif;font-size:30px;font-weight:bold;line-height:1;text-align:center;color:#000000;">Bukti Pembelian Product!</div>
                       </td>
                     </tr>
                   </tbody>
@@ -164,7 +164,7 @@
                           <tbody>
                             <tr>
                               <td style="width:550px;">
-                                <img alt="" height="auto" src="image/banner mail.png" style="border:none;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;" width="550" />
+                                <img alt="" height="auto" src="{{$data->product->product_galleries[0]->photo}}" style="border:none;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;" width="550" />
                               </td>
                             </tr>
                           </tbody>
@@ -196,24 +196,7 @@
                           <tbody>
                             <tr>
                               <td align="left" style="font-size:0px;padding:10px 25px;padding-right:25px;padding-left:25px;word-break:break-word;">
-                                <div style="font-family:Assistant,Hevaltica,Arial,sans-serif;font-size:18px;line-height:28px;text-align:left;color:#000000;">Hai Allpha <br /><br /> Daftar Pembelian barang kamu berhasil di cetak. <br /> Booking ID <strong>#21793</strong></div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td align="left" style="font-size:0px;padding:10px 25px;padding-right:25px;padding-left:25px;word-break:break-word;">
-                                <table cellpadding="0" cellspacing="0" width="100%" border="0" style="color:#000000;font-family:Assistant,Hevaltica,Arial,sans-serif;font-size:18px;line-height:28px;table-layout:auto;width:100%;border:none;">
-                                  <tr>
-                                    <td colspan="3">Costumers</td>
-                                  </tr>
-                                  <tr>
-                                    <td><strong>Allpha Chan</strong></td>
-                                    <td style="text-align: right">Padaherang</td>
-                                  </tr>
-                                  <tr>
-                                    <td><strong>Beta Chan</strong></td>
-                                    <td style="text-align: right">Pangandaran</td>
-                                  </tr>
-                                </table>
+                                <div style="font-family:Assistant,Hevaltica,Arial,sans-serif;font-size:18px;line-height:28px;text-align:left;color:#000000;">Hai {{$data->name}} <br /><br /> Daftar Pembelian barang kamu berhasil di cetak. <br /> Product ID <strong>{{$data->id}}</strong></div>
                               </td>
                             </tr>
                             <tr>
@@ -222,14 +205,53 @@
                                   <tr>
                                     <td colspan="3">Product Detail</td>
                                   </tr>
+                                 @foreach ($data->details as $detail)
+                                 <tr>
+                                  <td><strong>Nama Barang</strong></td>
+                                  <td style="text-align: right">{{$detail->product->name}}</td>
+                                </tr>
+                                <tr>
+                                  <td><strong>Harga Barang</strong></td>
+                                  <td style="text-align: right">{{$detail->product->price}}</td>
+                                </tr>
+                                 @endforeach
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align="left" style="font-size:0px;padding:10px 25px;padding-right:25px;padding-left:25px;word-break:break-word;">
+                                <table cellpadding="0" cellspacing="0" width="100%" border="0" style="color:#000000;font-family:Assistant,Hevaltica,Arial,sans-serif;font-size:18px;line-height:28px;table-layout:auto;width:100%;border:none;">
                                   <tr>
-                                    <td><strong>Nama Barang</strong></td>
-                                    <td style="text-align: right">Sweter</td>
-                                  </tr>
+                                    <td colspan="3">Costumers</td>
+                                @foreach ($data->details as $detail)
+                              </tr>
+                              <tr>
+                                <td><strong>Nama Pembeli</strong></td>
+                                <td style="text-align: right">{{$detail->transaction->name}}</td>
+                              </tr>
+                              <tr>
+                                <td><strong>Email</strong></td>
+                                <td style="text-align: right">{{$detail->transaction->email}}</td>
+                              </tr>
+                              <tr>
+                                <td><strong>Nomor Hp</strong></td>
+                                <td style="text-align: right">{{$detail->transaction->phone}}</td>
+                              </tr>
+                                @endforeach
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align="left" style="font-size:0px;padding:10px 25px;padding-right:25px;padding-bottom:25px;padding-left:25px;word-break:break-word;">
+                                <table cellpadding="0" cellspacing="0" width="100%" border="0" style="color:#000000;font-family:Assistant,Hevaltica,Arial,sans-serif;font-size:18px;line-height:28px;table-layout:auto;width:100%;border:none;">
                                   <tr>
-                                    <td><strong>Waktu Pembelian</strong></td>
-                                    <td style="text-align: right">Saturday,20,jan,2021</td>
+                                    <td><strong>Alamat</strong></td>
                                   </tr>
+                                 @foreach ($data->details as $detail)
+                                 <tr>
+                                  <td style="text-align: left">{{$detail->transaction->adress}}</td>
+                                </tr>
+                                 @endforeach
                                 </table>
                               </td>
                             </tr>
@@ -238,8 +260,8 @@
                                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:separate;line-height:100%;">
                                   <tbody>
                                     <tr>
-                                      <td align="center" bgcolor="#ff4444" role="presentation" style="border:none;border-radius:15px;cursor:auto;mso-padding-alt:10px 25px;background:#ff4444;" valign="middle">
-                                        <p style="display:inline-block;background:#ff4444;color:#ffffff;font-family:Assistant,Hevaltica,Arial,sans-serif;font-size:18px;font-weight:normal;line-height:120%;margin:0;text-decoration:none;text-transform:none;padding:10px 25px;mso-padding-alt:0px;border-radius:15px;"> Check Detail </p>
+                                      <td align="center" bgcolor="#ff4444" role="presentation" style="border:none;border-radius:5px;cursor:auto;mso-padding-alt:10px 25px;background:#ff4444;" valign="middle">
+                                        <a href="{{url('checkout/'. $data->id)}}" style="display:inline-block;background:#ff4444;color:#ffffff;font-family:Assistant,Hevaltica,Arial,sans-serif;font-size:18px;font-weight:normal;line-height:120%;margin:0;text-decoration:none;text-transform:none;padding:10px 25px;mso-padding-alt:0px;border-radius:5px;"> Check Detail </a>
                                       </td>
                                     </tr>
                                   </tbody>
@@ -298,7 +320,7 @@
                         <table cellpadding="0" cellspacing="0" width="100%" border="0" style="color:#000000;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:22px;table-layout:auto;width:100%;border:none;">
                           <tr>
                             <td style="width: 50px">
-                              <img src="image/chat mail.png" width="50px" />
+                              <img src="{{url('frontend/image/Bantuan.png')}}" width="50px" />
                             </td>
                             <td style="
                                 font-size: 15px;

@@ -31,8 +31,8 @@ class TransactionSuccess extends Mailable
     public function build()
     {
         return $this
-        ->from('hi@belajarkoding.com','Delta Store')
-        ->subject('Bukti Pemesanan Product Anda!')
+        ->from('hi@Costumer.com','Delta Store')
+        ->subject('Terimakasih Telah Membeli Product Kami!')
         ->view('email.transaction-success');
     }
 }

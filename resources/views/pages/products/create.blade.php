@@ -11,10 +11,7 @@
                     @csrf
                     <div class="form-group">
                         <label for="name" class="form-control-label">Nama Barang</label>
-                        <input type="text"
-                            name="name"
-                            value="{{old('name')}}"
-                            class="form-control @error('name') is-invalid @enderror"/>
+                        <input type="text"name="name" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" placeholder="Masukan Nama Product...."/>
                     @error('name') <div class="text-muted">{{$message}}</div> @enderror
                     </div>
                     
@@ -23,14 +20,16 @@
                         <input type="text"
                             name="type"
                             value="{{old('type')}}"
-                            class="form-control @error('type') is-invalid @enderror"/>
+                            class="form-control @error('type') is-invalid @enderror"
+                            placeholder="Masukan Type Product...."/>
                     @error('type') <div class="text-muted">{{$message}}</div> @enderror
                     </div>
     
                     <div class="form-group">
                         <label for="description" class="form-control-label">Deskripsi Barang</label>
                         <textarea name="description" 
-                        class="ckeditor form-control @error('description') is-invalid @enderror">
+                        class="ckeditor form-control @error('description') is-invalid @enderror"
+                        placeholder="Masukan Deskripsi Product....">
                         {{old('description')}}
                     </textarea>
                     @error('description') <div class="text-muted">{{$message}}</div> @enderror
@@ -41,7 +40,8 @@
                         <input type="number"
                             name="price"
                             value="{{old('price')}}"
-                            class="form-control @error('price') is-invalid @enderror"/>
+                            class="form-control @error('price') is-invalid @enderror"
+                            placeholder="Masukan Harga Product..."/>
                     @error('price') <div class="text-muted">{{$message}}</div> @enderror
                     </div>
     
@@ -50,7 +50,8 @@
                         <input type="Number"
                             name="quantity"
                             value="{{old('quantity')}}"
-                            class="form-control @error('quantity') is-invalid @enderror"/>
+                            class="form-control @error('quantity') is-invalid @enderror"
+                            placeholder="Masukan Stok Product..."/>
                     @error('quantity') <div class="text-muted">{{$message}}</div> @enderror
                     </div>
                     <div class="form-group">

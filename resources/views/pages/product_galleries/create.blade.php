@@ -7,17 +7,14 @@
                 <strong>Tambah Photo Barang</strong>
             </div>
             <div class="card-body card-block">
-                <form action="{{route('product-galleries.store')}}" method="POST" enctype="multipart/form-data">
+                <form action="{{route('product_galleries.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="name" class="form-control-label">Nama Barang</label>
-    
-                    <select name="products_id" 
-                       class="form-control @error('products_id') is-invalid @enderror">
+                    <select name="products_id" required class="form-control @error('products_id') is-invalid @enderror">
                        @foreach ($products as $product)
                        <option value="{{$product->id}}">{{$product->name}}</option>
-                        @endforeach
-    
+                        @endforeach 
                     </select>
     
                  
@@ -28,6 +25,8 @@
                     <div class="form-group">
                         <label for="photo" class="form-control-label">Foto Barang</label>
                         <input type="file"
+                            class="form-control"
+                            placeholder="photo"
                             name="photo"
                             value="{{old('photo')}}"
                             accept="image/*"

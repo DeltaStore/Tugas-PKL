@@ -15,7 +15,7 @@
                 <div class="col-12 col-lg-3">
                   <h5>Information</h5>
                   <ul class="list-unstyled">
-                    <li><a href="#">About us</a></li>
+                    <li><a href="{{route('about')}}">About us</a></li>
                     <li><a href="#">Checkout</a></li>
                     <li><a href="#">Services</a></li>
                   </ul>
@@ -33,7 +33,7 @@
             </div>
           </div>
         </div>
-        <div class="cotainer-fluid text-center border-top">
-          <div class="col-auto text-white-500 font-weight-light mt-1">Copyright@2021 All Right Reserved Delta</div>
+        <div class="cotainer-fluid text-center border-top" >
+          <div class="col-auto text-dark-500 font-weight-light mt-1">Copyright@2021 All Right Reserved Delta</div>
         </div>
       </footer>
